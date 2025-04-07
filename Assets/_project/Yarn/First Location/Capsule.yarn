@@ -1,0 +1,45 @@
+﻿title: Capsule
+---
+Raikhan: Хотите сыграть в игру и выйграть приз?
+You: Давай. А Что за игра?
+Raikhan: Аркан Тарту
+You: Хм... расскажи больше об этом
+Raikhan: Наша задача тянуть веревку в свою сторону пока противник не пересечет черту
+Raikhan: Только это версия на лошадьях
+Raikhan: Ну, что думаешь?
+    -> Хорошо
+        <<jump Consent>>
+    -> Как нибудь в другой раз
+        <<jump End>>
+    -> Начать разговор заново
+        <<jump Capsule>>
+===
+
+title: Consent
+---
+Raikhan: Тогда пойдем!
+<<switchScene "ArqanTartu">>
+===
+
+title: End
+---
+<<BackToMain "Pixel Dialogue System">>
+<<stop>>
+===
+
+title: NextLevel
+---
+Shal: You better be going
+Shal: Ready to depart right now?
+    -> Yes
+        <<switchScene "Race2">>
+    -> No
+        <<jump End>>
+===
+
+title: SomeDialogue
+---
+Madman: My Teammates said dialogue are unimportant
+Madman: How sad it is... I couldn't finish my work
+<<jump End>>
+===
